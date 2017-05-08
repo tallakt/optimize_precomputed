@@ -26,19 +26,6 @@ defmodule OptimizePrecomputed do
     result
   end
 
-  defp join_code(snippets) do
-    empty = quote do
-    end
-    snippets
-    |> Enum.reduce(empty, fn x, acc ->
-        quote do
-          unquote(acc)
-          unquote(x)
-        end
-      end)
-  end
-
-
   defp extract_function_info(code) do
     case code do
       {:def, _, [{fun_name, _, args}, [do: do_block]]} ->
