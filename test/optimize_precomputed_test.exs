@@ -136,4 +136,5 @@ defmodule OptimizePrecomputedTest do
   # a function definition without a body must come before other stuff
   # todo: check format of input arguments, list of lists
   # issue: can't use module functions as they are not available during compile time
+  # check that docs are preserved
 end
